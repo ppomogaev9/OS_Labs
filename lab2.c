@@ -1,4 +1,3 @@
-#include <sys/types.h>
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
@@ -7,7 +6,6 @@
 int main()
 {
     time_t now;
-    struct tm *sp;
 
     (void)time(&now);
 
@@ -16,13 +14,25 @@ int main()
         return ERROR;
     }
 
-    printf("%s", ctime( &now ) );
+    char* date_string = ctime(&now);
+    if (date_string == NULL) {
+        perror("ctime terminated with error");
+        return ERROR;
+    }
+
+    printf("%s", date_string);
+
+    struct tm *sp;
 
     sp = localtime(&now);
+    if (sp == NULL) {
+        perror("invoking localtime entailed error");
+        return ERROR;
+    }
+
     printf("%d/%d/%02d %d:%02d %s\n",
         sp->tm_mon + 1, sp->tm_mday,
         sp->tm_year, sp->tm_hour,
         sp->tm_min, tzname[sp->tm_isdst]);
-    exit(0);
+    return 0;
 }
-
