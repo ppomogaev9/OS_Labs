@@ -5,11 +5,12 @@
 
 int main()
 {
-    if (setenv("TZ", "America/Los_Angeles", 1) == ERROR) {
+    int setenv_ret_val = setenv("TZ", "America/Los_Angeles", 1);
+    if (setenv_ret_val == ERROR) {
         perror("changing TZ entailed error");
         return ERROR;
     }
-    
+
     time_t now;
     (void)time(&now);
 
@@ -31,9 +32,9 @@ int main()
 
     printf("%d/%d/%02d %d:%02d %s\n",
         sp->tm_mon + 1, sp->tm_mday,
-        sp->tm_year, sp->tm_hour,
+        1900 + sp->tm_year, sp->tm_hour,
         sp->tm_min, tzname[sp->tm_isdst]);
-    
+
     return 0;
 }
 
