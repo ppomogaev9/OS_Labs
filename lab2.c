@@ -12,7 +12,7 @@ int main()
     (void)time(&now);
 
     if (setenv("TZ", "America/Los_Angeles", 1) == ERROR) {
-        perror("changing TZ entail error");
+        perror("changing TZ entailed error");
         return ERROR;
     }
 
