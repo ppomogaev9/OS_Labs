@@ -5,14 +5,13 @@
 
 int main()
 {
-    time_t now;
-
-    (void)time(&now);
-
     if (setenv("TZ", "America/Los_Angeles", 1) == ERROR) {
         perror("changing TZ entailed error");
         return ERROR;
     }
+    
+    time_t now;
+    (void)time(&now);
 
     char* date_string = ctime(&now);
     if (date_string == NULL) {
@@ -34,6 +33,7 @@ int main()
         sp->tm_mon + 1, sp->tm_mday,
         sp->tm_year, sp->tm_hour,
         sp->tm_min, tzname[sp->tm_isdst]);
+    
     return 0;
 }
 
