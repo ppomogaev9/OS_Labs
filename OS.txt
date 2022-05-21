@@ -1,6 +1,7 @@
 Ссылки
 Робочевский: http://parallels.nsu.ru/~fat/unixsvr4-new/trunk/%d0%90.%20%d0%a0%d0%be%d0%b1%d0%b0%d1%87%d0%b5%d0%b2%d1%81%d0%ba%d0%b8%d0%b9%20-%20%d0%9e%d0%bf%d0%b5%d1%80%d0%b0%d1%86%d0%b8%d0%be%d0%bd%d0%bd%d0%b0%d1%8f%20%d1%81%d0%b8%d1%81%d1%82%d0%b5%d0%bc%d0%b0%20UNIX.pdf
 Иртегов UNIX System V Release 4: https://drive.google.com/uc?id=11UWu44xkYs7iN7BFx3Q-k1UJusHMz6N7
+Лабы: https://docs.google.com/document/d/1242C_65gJ_8HscvJ4RolW09KGS-jieYWwomrRTK_bn0/edit
 
 Введение
 В общем, программисты вынуждены, пусть и опосредованно, пользоваться сервисами операционной системы, да? Всей вот этой низкоуровневой мурой.
