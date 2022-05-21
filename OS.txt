@@ -1,12 +1,17 @@
 ### - тема
 ## - подтема
 # - заголовок
+WIP - work in progress
 
 Ссылки
-Робочевский: http://parallels.nsu.ru/~fat/unixsvr4-new/trunk/%d0%90.%20%d0%a0%d0%be%d0%b1%d0%b0%d1%87%d0%b5%d0%b2%d1%81%d0%ba%d0%b8%d0%b9%20-%20%d0%9e%d0%bf%d0%b5%d1%80%d0%b0%d1%86%d0%b8%d0%be%d0%bd%d0%bd%d0%b0%d1%8f%20%d1%81%d0%b8%d1%81%d1%82%d0%b5%d0%bc%d0%b0%20UNIX.pdf
-Иртегов UNIX System V Release 4: https://drive.google.com/uc?id=11UWu44xkYs7iN7BFx3Q-k1UJusHMz6N7
-Лабы: https://docs.google.com/document/d/1242C_65gJ_8HscvJ4RolW09KGS-jieYWwomrRTK_bn0/edit
-Исходный код соляриса: https://github.com/illumos/illumos-gate
+Робочевский: 
+http://parallels.nsu.ru/~fat/unixsvr4-new/trunk/%d0%90.%20%d0%a0%d0%be%d0%b1%d0%b0%d1%87%d0%b5%d0%b2%d1%81%d0%ba%d0%b8%d0%b9%20-%20%d0%9e%d0%bf%d0%b5%d1%80%d0%b0%d1%86%d0%b8%d0%be%d0%bd%d0%bd%d0%b0%d1%8f%20%d1%81%d0%b8%d1%81%d1%82%d0%b5%d0%bc%d0%b0%20UNIX.pdf
+Иртегов UNIX System V Release 4: 
+https://drive.google.com/uc?id=11UWu44xkYs7iN7BFx3Q-k1UJusHMz6N7
+Лабы: 
+https://docs.google.com/document/d/1242C_65gJ_8HscvJ4RolW09KGS-jieYWwomrRTK_bn0/edit
+Исходный код соляриса: 
+https://github.com/illumos/illumos-gate
 
 Введение
 В общем, программисты вынуждены, пусть и опосредованно, пользоваться сервисами операционной системы, да? Всей вот этой низкоуровневой мурой.
@@ -20,8 +25,8 @@
 #определение (WIKI) Ядро ОС (kernel) — центральная часть ОС обеспечивающая приложениям координированный доступ к ресурсам компьютера, таким как процессорное время, 
 память, внешнее аппаратное обеспечение, внешнее устройство ввода и вывода информации.
 
-Из этого: https://sun9-87.userapi.com/s/v1/ig2/4N5xE-fuanDOyWm4W5DvBeA5pQSeu4R7Y1Dqlv78QsVPi0WnS7w7C4hQN0IhxWbYKzBsnhn7VZeyJWCvsCUMUYJH.jpg?
-size=815x173&quality=96&type=album
+Из этого: 
+https://sun9-87.userapi.com/s/v1/ig2/4N5xE-fuanDOyWm4W5DvBeA5pQSeu4R7Y1Dqlv78QsVPi0WnS7w7C4hQN0IhxWbYKzBsnhn7VZeyJWCvsCUMUYJH.jpg?size=815x173&quality=96&type=album
 Ядро обеспечивает доступ(регулирует взаимодействие с) к некоторым сервисам, таким как ввод/вывод и прочее, причем, судя по всему(надо проверить), ничто другое не имеет
 на это непосредственного права. И чтобы получить доступ к этим сервисам пользователю, пишущему код, необходимо использовать стандартные библиотечные функции, которые
 внутри содержат системный вызов к ядру ОС. Это делается так: процессору положено перейти в системный режим работы процессора(?(есть пользовательский режим)), передача
@@ -95,7 +100,8 @@ size=815x173&quality=96&type=album
 Ядро обеспечивает прикладным программам(и не только) доступ к аппаратной части компьютера, а также предоставляет возможность пользоваться функционалом операционной 
 системы, таким как создание процессов, менеджмент памятью(логично же, да?), работа с вводом выводом. 
 
-Структура ядра: https://sun9-43.userapi.com/s/v1/ig2/7vLUkb5NZ099L44iBMUBMCMbnvLGdZWkIUlAOS-6ixLqfoVK9zaAfnI7DURztPKK0Wdk6meCjVa03vfRNIWSwjjd.jpg?ze=354x362&quality=96&type=album
+Структура ядра: 
+https://sun9-43.userapi.com/s/v1/ig2/7vLUkb5NZ099L44iBMUBMCMbnvLGdZWkIUlAOS-6ixLqfoVK9zaAfnI7DURztPKK0Wdk6meCjVa03vfRNIWSwjjd.jpg?ze=354x362&quality=96&type=album
 Про все её части можно почитать у Робочевского
 
 https://en.wikipedia.org/wiki/Kernel_(operating_system)#cite_note-Linfo-1
@@ -107,14 +113,19 @@ https://en.wikipedia.org/wiki/Kernel_(operating_system)#cite_note-Linfo-1
 
 ##системные вызовы
 Интерфейс системных вызовов - набор системных вызовов. Системный вызов - обращение к ядру ОС. 
-Картинка от иртегова: https://sun9-73.userapi.com/s/v1/ig2/kx8c09R2XEs7rwIHYAfRojPL-V_MmCBERihDnS6wl7BOFyoseSl2fug9bH22em-1O3Pary8sCDXkzFJq4McbRhE9.jpg?size=803x650&quality=96&type=album
+Картинка от иртегова: 
+https://sun9-73.userapi.com/s/v1/ig2/kx8c09R2XEs7rwIHYAfRojPL-V_MmCBERihDnS6wl7BOFyoseSl2fug9bH22em-1O3Pary8sCDXkzFJq4McbRhE9.jpg?size=803x650&quality=96&type=album
 
 Ядро взаимодействует с аппаратной частью посредством драйверов этой самой аппаратной части
 
 ###Процесс
-Картиночка от Иртегова: https://sun9-6.userapi.com/s/v1/ig2/ZbHIHs0tYgFzoaOXGiB5uo395GTyyjJPN7ZhsIcrvLm5kJYxLLD7yVqyEJXpFkNCbKfE-13yUXcMJVb4FNNzHXBG.jpg?size=538x818&quality=96&type=album
+Картиночка от Иртегова: 
+https://sun9-6.userapi.com/s/v1/ig2/ZbHIHs0tYgFzoaOXGiB5uo395GTyyjJPN7ZhsIcrvLm5kJYxLLD7yVqyEJXpFkNCbKfE-13yUXcMJVb4FNNzHXBG.jpg?size=538x818&quality=96&type=album
 
 Процесс - это программа вместе с 
+
+##Структура процесса:
+WIP
 
 ###Виртуальная память
 Как я понял, каждому процессу выделяется некоторое виртуальное адресное пространство - набор чисел-адресов, отображаемых на физическое адресное пространство каким-то 
