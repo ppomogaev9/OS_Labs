@@ -4,19 +4,19 @@
 #include <sys/types.h>
 #define ERROR -1
 
-void file_opening() {
+int file_opening() {
         FILE * file = fopen("filefile", "r");
         if (file == NULL) {
                 perror("in function \"file_opening\", fopen");
-                return;
+                return ERROR;
         }
 
         int fclose_result = fclose(file);
         if (fclose_result == EOF) {
                 perror("in function \"file_opening\" fclose");
-                return;
+                return ERROR;
         }
-        return;
+        return ERROR;
 }
 
 void print_IDs() {
@@ -27,7 +27,7 @@ void print_IDs() {
 int main() {
         print_IDs();
 
-        file_opening();
+        int file_opening_result = file_opening();
 
         int res_setuid = setuid(getuid());
         if (res_setuid == ERROR) {
@@ -37,6 +37,8 @@ int main() {
 
         print_IDs();
 
-        file_opening();
+        file_opening_result = file_opening();
+
         return 0;
 }
+
