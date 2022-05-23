@@ -26,3 +26,4 @@ https://ru.wikipedia.org/wiki/%D0%94%D0%B5%D1%81%D0%BA%D1%80%D0%B8%D0%BF%D1%82%D
 - Нити исполнения (кроме той, которая вызывала fork) - т.е. когда сделаем fork многопоточного процесса, у него наследуется
 только та нить, которая сделала forkм 
 
+Про дескрипторы: https://www.ibm.com/docs/ru/aix/7.2?topic=volumes-using-file-descriptors
