@@ -13,7 +13,7 @@ int main(int argc, const char** argv) {
         }
 
         if (pid == FORK_VAL_FOR_CHILD) {
-                execlp("cat", "cat", "large_text.txt", NULL);
+                execl("/bin/cat", "/bin/cat", "large_text.txt", NULL);
                 perror("Execlp didn't execute. Error");
                 return ERROR;
         }
